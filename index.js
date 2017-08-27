@@ -35,6 +35,14 @@ taka.model = name => {
           .catch(reject);
       });
     },
+    count: (fields) => {
+      return new Promise((resolve, reject) => {
+        model
+          .count(fields || {})
+          .then(resolve)
+          .catch(reject);
+      });
+    },
     remove: fields => {
       return new Promise((resolve, reject) => {
         model.remove(fields).then(({result}) => resolve(result)).catch(reject);
