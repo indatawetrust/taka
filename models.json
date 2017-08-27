@@ -1,0 +1,10 @@
+{
+  "User": {
+    "username": "String",
+    "password": "String"
+  },
+  "Post": {
+    "user_id": "ObjectId",
+    "text": "String"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "taka",
+  "version": "0.0.1",
+  "description": "Mongoose based model manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "indatawetrust",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^4.11.8"
+  },
+  "devDependencies": {
+    "ava": "^0.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indatawetrust/taka.git"
+  },
+  "keywords": [
+    "mongoose",
+    "model",
+    "manager"
+  ],
+  "bugs": {
+    "url": "https://github.com/indatawetrust/taka/issues"
+  },
+  "homepage": "https://github.com/indatawetrust/taka#readme"
+}
