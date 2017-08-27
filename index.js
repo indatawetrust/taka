@@ -31,7 +31,15 @@ taka.model = name => {
         model
           .find(fields)
           .sort(sort || {})
-          .then(data => (data.length == 1 ? resolve(data[0]) : resolve(data)))
+          .then(resolve)
+          .catch(reject);
+      });
+    },
+    findOne: (fields, sort) => {
+      return new Promise((resolve, reject) => {
+        model
+          .findOne(fields)
+          .then(resolve)
           .catch(reject);
       });
     },

@@ -31,7 +31,7 @@ test('tests', async t => {
     },
   );
 
-  user = await taka.model('User').find({
+  user = await taka.model('User').findOne({
     _id: user._id,
   });
 
@@ -48,11 +48,11 @@ test('tests', async t => {
 
   await taka.model('User').remove({_id: user._id});
 
-  user = await taka.model('User').find({
+  user = await taka.model('User').findOne({
     _id: user._id,
   });
 
-  t.deepEqual([], user);
+  t.deepEqual(null, user);
 
   user = await taka.model('User').save({
     username: 'ahmet',
