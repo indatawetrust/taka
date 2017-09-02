@@ -41,7 +41,7 @@ await taka.model('User').save({
 ```
 ##### find
 ```js
-await taka.model('User').find({}, /* sorting parameters */)
+await taka.model('User').find({}, /* sorting parameters */, /* map function */)
 ```
 ##### findOne
 ```js
