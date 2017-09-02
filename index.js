@@ -26,13 +26,31 @@ taka.model = name => {
         new model(fields).save().then(resolve).catch(reject);
       });
     },
-    find: (fields, sort) => {
+    find: (fields, sort, map) => {
       return new Promise((resolve, reject) => {
-        model
-          .find(fields)
-          .sort(sort || {})
-          .then(resolve)
-          .catch(reject);
+        if (!map) {
+          model
+            .find(fields)
+            .sort(sort || {})
+            .then(resolve)
+            .catch(reject);
+        } else {
+          model
+            .find(fields)
+            .sort(sort || {})
+            .then(datas => {
+              for (let i in datas) {
+                let data = datas[i].toObject();
+
+                data = map(data);
+
+                datas[i] = data
+              }
+
+              resolve(datas)
+            })
+            .catch(reject);
+        }
       });
     },
     findOne: (fields, sort) => {

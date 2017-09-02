@@ -59,6 +59,8 @@ test('tests', async t => {
     password: '12345',
   });
 
+  await taka.model('Post').remove()
+
   for (let i = 0; i < 10; i++)
     await taka.model('Post').save({
       user_id: user._id,
@@ -66,4 +68,11 @@ test('tests', async t => {
     });
 
   t.is(4, (await taka.model('Post').page(1, {}, {text: 'desc'})).length);
+
+  const datas = await taka.model('Post').find({},{},data => {
+    data.hello = 'world'
+    return data
+  })
+
+  t.is(Array(10).fill('world').join(''), datas.map(({hello}) => hello).join(''))
 });
