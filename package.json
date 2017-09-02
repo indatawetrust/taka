@@ -1,6 +1,6 @@
 {
   "name": "taka",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mongoose based model manager",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "indatawetrust",
   "license": "MIT",
   "dependencies": {
+    "auto-resolve": "0.0.2",
     "mongoose": "^4.11.8"
   },
   "devDependencies": {

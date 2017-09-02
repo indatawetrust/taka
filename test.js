@@ -69,8 +69,8 @@ test('tests', async t => {
 
   t.is(4, (await taka.model('Post').page(1, {}, {text: 'desc'})).length);
 
-  const datas = await taka.model('Post').find({},{},data => {
-    data.hello = 'world'
+  const datas = await taka.model('Post').find({},{}, async data => {
+    data.hello = await Promise.resolve('world')
     return data
   })
 

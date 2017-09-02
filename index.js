@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'),
+      autoResolve = require('auto-resolve')
 mongoose.Promise = global.Promise;
 
 let ps = 10;
@@ -42,7 +43,7 @@ taka.model = name => {
               for (let i in datas) {
                 let data = datas[i].toObject();
 
-                data = map(data);
+                autoResolve(map.bind(null, data)).then(_ => data = _);
 
                 datas[i] = data
               }
