@@ -10,16 +10,16 @@ npm i taka -S
 
 ### usage
 
-Save the models in a single json file.
+Save the models in a single js file.
 ```js
-{
+module.exports = {
   "User": {
-    "username": "String",
-    "password": "String"
+    "username": String,
+    "password": String
   },
   "Post": {
     "user_id": "ObjectId",
-    "text": "String"
+    "text": String
   }
 }
 ```
